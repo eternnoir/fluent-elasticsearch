@@ -7,4 +7,5 @@ RUN mkdir /etc/fluent
 RUN apt-get install -y libcurl4-gnutls-dev make
 RUN /usr/local/bin/gem install fluent-plugin-elasticsearch
 ADD fluent.conf /etc/fluent/
+EXPOSE 24224
 ENTRYPOINT ["/usr/local/bundle/bin/fluentd", "-c", "/etc/fluent/fluent.conf"]
