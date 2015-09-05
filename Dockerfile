@@ -10,4 +10,4 @@ RUN mkdir /var/config
 VOLUME /var/config
 EXPOSE 24224
 ENV CONFIG_PATH = "/etc/fluent/fluent.conf"
-ENTRYPOINT /usr/local/bundle/bin/fluentd -c $CONFIG_PATH
+CMD ["sh","-c","/usr/local/bundle/bin/fluentd", "-c", "$CONFIG_PATH"]
